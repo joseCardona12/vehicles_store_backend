@@ -8,6 +8,9 @@ import {
 } from "../utils/constants/loadEnv";
 import { RoleModel } from "../roles/role.model";
 import { UserModel } from "../users/user.model";
+import { BrandModel } from "../brands/brand.model";
+import { CarModel } from "../cars/car.model";
+import { ImageModel } from "../images/image.model";
 
 export const sequelize: Sequelize = new Sequelize({
   dialect: "mysql",
@@ -16,5 +19,5 @@ export const sequelize: Sequelize = new Sequelize({
   password: db_password,
   database: db_name,
   port: parseInt(db_port),
-  models: [RoleModel, UserModel],
+  models: [RoleModel, UserModel, BrandModel, CarModel, ImageModel],
 });
