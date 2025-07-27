@@ -2,10 +2,12 @@ import {
   AutoIncrement,
   Column,
   DataType,
+  HasMany,
   Model,
   PrimaryKey,
   Table,
 } from "sequelize-typescript";
+import { UserModel } from "../users/user.model";
 
 @Table({
   tableName: "roles",
@@ -25,4 +27,7 @@ export class RoleModel extends Model {
     allowNull: false,
   })
   name!: string;
+
+  @HasMany(() => UserModel)
+  users!: UserModel[];
 }

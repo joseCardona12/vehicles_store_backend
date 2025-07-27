@@ -7,6 +7,7 @@ import {
   db_user,
 } from "../utils/constants/loadEnv";
 import { RoleModel } from "../roles/role.model";
+import { UserModel } from "../users/user.model";
 
 export const sequelize: Sequelize = new Sequelize({
   dialect: "mysql",
@@ -15,5 +16,5 @@ export const sequelize: Sequelize = new Sequelize({
   password: db_password,
   database: db_name,
   port: parseInt(db_port),
-  models: [RoleModel],
+  models: [RoleModel, UserModel],
 });

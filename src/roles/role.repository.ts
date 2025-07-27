@@ -5,7 +5,7 @@ class RoleRepository {
     try {
       return await RoleModel.findAll();
     } catch (error: unknown) {
-      throw new Error("Error to findAll roles");
+      throw new Error(`${error}`);
     }
   }
 }

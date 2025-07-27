@@ -12,7 +12,7 @@ export class RoleController {
       });
     } catch (error: unknown) {
       res.status(500).json({
-        message: "Error with roles",
+        message: error,
         status: 500,
         data: [],
       });
